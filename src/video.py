@@ -19,6 +19,7 @@ class Video:
         self.__link = f"https://youtu.be/{self.__video_id}"
         self.__view_count = self.__info["items"][0]["statistics"]["viewCount"]
         self.__like_count = self.__info["items"][0]["statistics"]["likeCount"]
+        self.__duration = self.__info["items"][0]["contentDetails"]["duration"]
 
     def __str__(self):
         return self.title
@@ -46,6 +47,10 @@ class Video:
     @property
     def like_count(self):
         return self.__like_count
+
+    @property
+    def duration(self):
+        return self.__duration
 
 
 class PLVideo(Video):
